@@ -21,13 +21,13 @@ const timelineEvents = [
   {
     year: '2021',
     title: "Bachelor's in Computer Science",
-    description: 'Specialized in Machine Learning and Natural Language Processing',
+    description: 'Completed Bachelor in Computer Science with Data Science as Minor',
     Icon: GraduationCap,
   },
   {
     year: '2019',
     title: 'First Publication',
-    description: 'Literary debut with a series of poems in national magazines',
+    description: 'Started publishing poetry on internet and got first publication in a book',
     Icon: Pen,
   },
 ];
@@ -48,7 +48,7 @@ export default function About() {
           className="terminal-card p-8"
         >
           <TerminalText
-            text="I'm Aditya Mishra, a writer and technologist exploring the intersection of human emotion and machine intelligence. My work spans from crafting verses in Hindi and English to developing AI systems that push the boundaries of what's possible."
+            text="I'm Aditya Mishra, a student and writer exploring the intersection of human emotion and machine intelligence. My work spans from being a freelancer to learning and writing about AI systems that push the boundaries of what's possible."
             speed={30}
             className="text-lg leading-relaxed"
           />
