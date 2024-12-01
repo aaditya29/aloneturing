@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-terminal-black text-terminal-gray;
+    text-shadow: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .dark {
+    color-scheme: dark;
+  }
+}
+
+@layer components {
+  .terminal-header {
+    @apply font-mono text-terminal-green;
+    text-shadow: 0 0 2px rgba(0, 255, 0, 0.2);
+    letter-spacing: -0.5px;
+  }
+
+  .terminal-text {
+    @apply font-mono text-terminal-gray;
+    letter-spacing: -0.3px;
+  }
+
+  .terminal-link {
+    @apply text-terminal-green hover:text-terminal-yellow transition-colors duration-300;
+    text-shadow: none;
+  }
+
+  .matrix-bg {
+    @apply relative overflow-hidden;
+    &::before {
+      content: '';
+      @apply absolute inset-0 bg-terminal-black opacity-90 z-0;
+    }
+  }
+
+  .terminal-card {
+    @apply bg-terminal-black border border-terminal-green/50 rounded-none;
+    box-shadow: 0 0 5px rgba(0, 255, 0, 0.1);
+  }
+
+  .terminal-input {
+    @apply bg-terminal-black border border-terminal-green/50 text-terminal-gray;
+    &:focus {
+      @apply outline-none border-terminal-yellow/50;
+      box-shadow: 0 0 5px rgba(255, 255, 102, 0.1);
+    }
+  }
+}
+
+/* Matrix Rain Effect */
+.matrix-rain {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.4;
+}
+
+.matrix-column {
+  position: absolute;
+  width: 20px;
+  top: -100%;
+  animation: matrix-rain 20s linear infinite;
+  color: rgba(0, 255, 0, 0.5);
+  text-shadow: none;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  @apply w-2;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-terminal-black;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-terminal-green/30 rounded-none;
+  border: 1px solid rgba(0, 255, 0, 0.1);
+}
